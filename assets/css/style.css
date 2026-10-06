@@ -234,6 +234,21 @@ main.wrap { padding-block: 2rem 4rem; }
 .prose th, .prose td { border: 1px solid var(--rule); padding: .4rem .7rem; }
 .post-meta { color: var(--ink-2); font-weight: 600; font-size: .95rem; margin: 0 0 2rem; }
 
+.deck-group { margin-top: 2.5rem; scroll-margin-top: 5rem; }
+.deck-group h2 { margin: 0 0 .3rem; }
+.deck-group > p { margin: 0 0 1rem; }
+.topic-nav { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1.25rem; }
+.topic-nav .tag { font-size: .85rem; padding: .3rem .75rem; text-decoration: none; }
+.topic-nav .tag:hover { color: var(--ink); box-shadow: inset 0 -2px 0 var(--gold); }
+.topic-nav .tag .muted { margin-left: .3rem; font-weight: 600; }
+
+.pin {
+  display: inline-block; margin-left: .5rem; padding: .1rem .5rem; border-radius: 999px;
+  vertical-align: middle; background: var(--gold); color: var(--paper);
+  font-family: var(--sans); font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+}
+.post-list li.pinned { background: var(--paper-2); padding-inline: 1rem; border-radius: 10px; border: 0; margin-bottom: .5rem; }
+
 .empty { padding: 2rem; border: 1px dashed var(--rule); border-radius: var(--radius); color: var(--ink-2); text-align: center; }
 
 /* ---- 9. Print (qr.html and general) ------------------------------------ */

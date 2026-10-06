@@ -28,8 +28,9 @@ Visitors usually arrive by scanning a QR code on a business card, slide, poster,
 ├── _config.yml           # Site identity, contact details, social links, nav
 ├── _data/
 │   ├── apps.yml          # Listing for /apps/  (title, url, description, tags)
-│   └── decks.yml         # Listing for /decks/ (title, url, course, description, tags)
-├── _includes/            # head, icons, listing card
+│   ├── decks.yml         # Listing for /decks/ (title, url, category, course, description, tags)
+│   └── deck_categories.yml  # Topic groups for /decks/, in display order
+├── _includes/            # head, icons, listing card, post list, deck groups
 ├── _layouts/             # default, page, post
 ├── _posts/               # Blog posts (YYYY-MM-DD-slug.md)
 ├── index.html            # Home / business card page with QR code
@@ -60,7 +61,11 @@ description: One-line summary shown in post lists and link previews.
 Post body in Markdown.
 ```
 
+Add `pinned: true` to the front matter to keep a post at the top of the Blog page and the home page's post list. The **Table of Contents** post (`_posts/2026-10-06-table-of-contents.md`) is pinned this way. It builds itself from the posts, `_data/apps.yml`, and `_data/decks.yml`, so it never needs hand edits.
+
 **Add an interactive app or slide deck.** Copy the single HTML file into `apps/` or `decks/` *without adding front matter*, so Jekyll publishes it byte-for-byte. Then add an entry to `_data/apps.yml` or `_data/decks.yml`. Use lowercase, hyphenated filenames, for example `decks/graph-traversal.html`.
+
+**Group decks by topic.** Every deck in `_data/decks.yml` has a `category` that matches an `id` in `_data/deck_categories.yml`. That file sets the order, title, and description of each group on the Decks page. To start a new topic, add an entry there. A deck with no category, or one that matches no `id`, is listed under "Other".
 
 **Update contact details or social links.** Edit `person:` and `social:` in `_config.yml`. The home page and `contact.vcf` both read from these settings.
 

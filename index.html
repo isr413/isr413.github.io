@@ -42,21 +42,12 @@ layout: default
   </div>
 </section>
 
-{%- assign latest = site.posts | slice: 0, 3 -%}
-{%- if latest.size > 0 %}
+{%- if site.posts.size > 0 %}
 <div class="section-head">
   <h2>Recent posts</h2>
   <a href="{{ '/blog/' | relative_url }}">All posts &rarr;</a>
 </div>
-<ul class="post-list">
-  {%- for post in latest %}
-  <li>
-    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    {%- if post.description %}<p>{{ post.description }}</p>{% endif %}
-  </li>
-  {%- endfor %}
-</ul>
+{% include post-list.html limit=3 %}
 {%- endif %}
 
 <div class="section-head">

@@ -1,0 +1,17 @@
+{%- comment -%}
+  Posts with `pinned: true` first, then the rest newest first.
+  Usage: {% include post-list.html limit=3 %}  (limit is optional)
+{%- endcomment -%}
+{%- assign pinned = site.posts | where: "pinned", true -%}
+{%- assign others = site.posts | where_exp: "p", "p.pinned != true" -%}
+{%- assign ordered = pinned | concat: others -%}
+{%- if include.limit %}{% assign ordered = ordered | slice: 0, include.limit %}{% endif -%}
+<ul class="post-list">
+  {%- for post in ordered %}
+  <li{% if post.pinned %} class="pinned"{% endif %}>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.pinned %}<span class="pin">Pinned</span>{% endif %}
+    {%- if post.description %}<p>{{ post.description }}</p>{% endif %}
+  </li>
+  {%- endfor %}
+</ul>

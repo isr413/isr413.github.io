@@ -1,7 +1,9 @@
-# Single-file HTML slide decks, newest first.
+# Single-file HTML slide decks, newest first within each category.
 # Drop the file in decks/ unchanged (no front matter) and add an entry here.
+# `category` must match an id in deck_categories.yml.
 - title: Recursion & Quicksort
   url: /decks/recursion-and-quicksort.html
+  category: recursion-sorting
   course: Algorithms & Data Structures
   description: Recursion and divide-and-conquer sorting, with Lomuto and Hoare partition traces stepped through slide by slide.
   tags: [recursion, sorting, lecture]

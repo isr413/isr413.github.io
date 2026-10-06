@@ -1,11 +1,17 @@
 ---
 layout: default
 title: Decks
-description: Lecture slide decks by Ian Riley.
+description: Lecture slide decks by Ian Riley, grouped by topic.
 ---
 <p class="kicker">Decks</p>
 <h1>Slide decks</h1>
-<p class="lede">Lecture decks from my courses. Use the arrow keys to move through slides, <kbd>F</kbd> for fullscreen, or <kbd>C</kbd> to list every shortcut.</p>
-<div class="grid" style="margin-top:2rem">
-  {%- for deck in site.data.decks %}{% include work-card.html item=deck label="Deck" %}{% endfor %}
-</div>
+<p class="lede">Lecture decks from my courses, grouped by topic. Use the arrow keys to move through slides, <kbd>F</kbd> for fullscreen, or <kbd>C</kbd> to list every shortcut.</p>
+{%- if site.data.deck_categories.size > 1 %}
+<nav class="topic-nav" aria-label="Topics">
+  {%- for cat in site.data.deck_categories %}
+  {%- assign n = site.data.decks | where: "category", cat.id | size %}
+  {%- if n > 0 %}<a class="tag" href="#{{ cat.id }}">{{ cat.title }} <span class="muted">{{ n }}</span></a>{% endif %}
+  {%- endfor %}
+</nav>
+{%- endif %}
+{% include deck-groups.html %}
