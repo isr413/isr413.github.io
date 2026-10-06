@@ -25,6 +25,16 @@ layout: default
       <li><a href="{{ s.url }}" rel="me noopener" aria-label="{{ s.name }}" title="{{ s.name }}">{% include icon.html name=s.name %}</a></li>
       {%- endfor %}
     </ul>
+    {%- if site.hobby.size > 0 %}
+    <div class="link-row">
+      <span class="link-label" id="hobby-label">Hobby:</span>
+      <ul class="icon-links" aria-labelledby="hobby-label">
+        {%- for s in site.hobby %}
+        <li><a href="{{ s.url }}" rel="me noopener" aria-label="Hobby {{ s.name }}" title="Hobby {{ s.name }}">{% include icon.html name=s.name %}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endif %}
   </div>
 </section>
 

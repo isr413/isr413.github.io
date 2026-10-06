@@ -39,6 +39,13 @@ social:
   # - name: ORCID
   #   url: https://orcid.org/0000-0000-0000-0000
 
+# Hobby links, shown as a separate "Hobby:" row under the icon links
+hobby:
+  - name: GitHub
+    url: https://github.com/latenitecoding
+  - name: YouTube
+    url: https://www.youtube.com/@hobbyvomit
+
 nav:
   - title: Home
     url: /

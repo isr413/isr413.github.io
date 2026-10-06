@@ -153,6 +153,8 @@ main.wrap { padding-block: 2rem 4rem; }
 }
 .icon-links a:hover { color: var(--gold-2); border-color: var(--gold); }
 .icon-links svg { width: 1.2rem; height: 1.2rem; }
+.link-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin-top: .7rem; }
+.link-label { font-weight: 700; font-size: .95rem; color: var(--ink-2); }
 
 /* ---- 5. Home: business card -------------------------------------------- */
 .hero {
