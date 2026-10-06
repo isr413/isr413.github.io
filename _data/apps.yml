@@ -1,0 +1,6 @@
+# Interactive single-file HTML apps, newest first.
+# Drop the file in apps/ unchanged (no front matter) and add an entry here.
+- title: Boggle Table
+  url: /apps/boggle.html
+  description: Roll a board, spell words by tracing touching tiles, then explore the trie of every word on the board and step through the search algorithm that finds them.
+  tags: [tries, backtracking, game]

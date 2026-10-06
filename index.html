@@ -1,0 +1,92 @@
+---
+layout: default
+---
+{%- assign p = site.person -%}
+<section class="hero" aria-labelledby="name">
+  <figure class="portrait">
+    <img src="{{ p.photo | relative_url }}" width="600" height="800" alt="Selfie of {{ p.name }} with another person, outdoors">
+  </figure>
+  <div>
+    <p class="kicker">{{ p.department }}</p>
+    <h1 id="name">{{ p.name }}</h1>
+    <p class="role">{{ p.title }}</p>
+    <p class="affil">{{ p.department }}, {{ p.organization }}</p>
+    <p class="bio">
+      I teach Algorithms &amp; Data Structures, Computer Networks, and Software Engineering,
+      and coach the University of Tulsa ICPC programming team. My research interests are formal
+      systems, autonomous and self-adaptive systems, and software engineering.
+    </p>
+    <div class="btn-row">
+      <a class="btn primary" href="mailto:{{ p.email }}">{% include icon.html name="email" %}Email me</a>
+      <a class="btn" href="{{ '/contact.vcf' | relative_url }}">{% include icon.html name="contact" %}Add to contacts</a>
+    </div>
+    <ul class="icon-links" aria-label="Elsewhere">
+      {%- for s in site.social %}
+      <li><a href="{{ s.url }}" rel="me noopener" aria-label="{{ s.name }}" title="{{ s.name }}">{% include icon.html name=s.name %}</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="qr-panel" aria-labelledby="qr-heading">
+  <div class="qr-code">
+    <img src="{{ '/assets/qr/site-qr.svg' | relative_url }}" width="200" height="200" alt="QR code linking to {{ site.url | remove: 'https://' }}">
+  </div>
+  <div>
+    <h2 id="qr-heading">Share this page</h2>
+    <p>Scan the code to open <b>{{ site.url | remove: 'https://' }}</b> on a phone, or send the link directly.</p>
+    <div class="btn-row" style="margin:0">
+      <button class="btn" type="button" id="share-btn" hidden>{% include icon.html name="share" %}<span>Share link</span></button>
+      <a class="btn" href="{{ '/qr.html' | relative_url }}">{% include icon.html name="qr" %}Printable QR code</a>
+    </div>
+  </div>
+</section>
+
+{%- assign latest = site.posts | slice: 0, 3 -%}
+{%- if latest.size > 0 %}
+<div class="section-head">
+  <h2>Recent posts</h2>
+  <a href="{{ '/blog/' | relative_url }}">All posts &rarr;</a>
+</div>
+<ul class="post-list">
+  {%- for post in latest %}
+  <li>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    {%- if post.description %}<p>{{ post.description }}</p>{% endif %}
+  </li>
+  {%- endfor %}
+</ul>
+{%- endif %}
+
+<div class="section-head">
+  <h2>Interactive apps &amp; slide decks</h2>
+  <span><a href="{{ '/apps/' | relative_url }}">Apps &rarr;</a> &nbsp; <a href="{{ '/decks/' | relative_url }}">Decks &rarr;</a></span>
+</div>
+<div class="grid">
+  {%- for app in site.data.apps limit: 2 %}{% include work-card.html item=app label="App" %}{% endfor %}
+  {%- for deck in site.data.decks limit: 2 %}{% include work-card.html item=deck label="Deck" %}{% endfor %}
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById('share-btn');
+    var url = {{ site.url | append: site.baseurl | append: '/' | jsonify }};
+    var label = btn.querySelector('span');
+    if (navigator.share) {
+      btn.hidden = false;
+      btn.addEventListener('click', function () {
+        navigator.share({ title: {{ site.title | jsonify }}, url: url }).catch(function () {});
+      });
+    } else if (navigator.clipboard) {
+      btn.hidden = false;
+      label.textContent = 'Copy link';
+      btn.addEventListener('click', function () {
+        navigator.clipboard.writeText(url).then(function () {
+          label.textContent = 'Copied!';
+          setTimeout(function () { label.textContent = 'Copy link'; }, 1800);
+        });
+      });
+    }
+  })();
+</script>

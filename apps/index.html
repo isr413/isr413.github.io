@@ -1,0 +1,11 @@
+---
+layout: default
+title: Apps
+description: Interactive, single-page apps by Ian Riley for exploring algorithms and data structures.
+---
+<p class="kicker">Apps</p>
+<h1>Interactive apps</h1>
+<p class="lede">Hands-on tools for exploring algorithms and data structures. Each one runs entirely in your browser.</p>
+<div class="grid" style="margin-top:2rem">
+  {%- for app in site.data.apps %}{% include work-card.html item=app label="App" %}{% endfor %}
+</div>

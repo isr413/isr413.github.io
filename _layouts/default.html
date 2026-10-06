@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+{% include head.html %}
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}">Ian Riley<span>.</span></a>
+    <nav aria-label="Main">
+      <ul class="site-nav">
+        {%- for item in site.nav %}
+        {%- assign is_current = false %}
+        {%- if item.url == "/" %}{% if page.url == "/" or page.url == "/index.html" %}{% assign is_current = true %}{% endif %}
+        {%- elsif page.url contains item.url %}{% assign is_current = true %}{% endif %}
+        <li><a href="{{ item.url | relative_url }}"{% if is_current %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+{{ content }}
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; {{ site.time | date: "%Y" }} {{ site.author.name }}</span>
+    <span><a href="{{ '/qr.html' | relative_url }}">QR code</a> · <a href="{{ '/contact.vcf' | relative_url }}">vCard</a> · <a href="{{ '/blog/feed.xml' | relative_url }}">RSS</a></span>
+  </div>
+</footer>
+</body>
+</html>

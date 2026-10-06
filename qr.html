@@ -1,0 +1,29 @@
+---
+layout: default
+title: QR code
+description: A printable QR code that links to Ian Riley's website.
+---
+<style>
+  .qr-print { text-align: center; max-width: 30rem; margin: 1rem auto 0; }
+  .qr-print .qr-code { width: min(22rem, 100%); margin: 1.5rem auto; padding: 1rem; }
+  .qr-print .url { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; margin: 0; }
+  .qr-print .kicker { justify-content: center; }
+  @media print {
+    main.wrap { padding: 0; }
+    .qr-print { margin-top: 1in; }
+    .qr-print .qr-code { box-shadow: none; width: 4in; }
+  }
+</style>
+<div class="qr-print">
+  <p class="kicker">{{ site.person.organization }}</p>
+  <h1>{{ site.person.name }}</h1>
+  <p class="muted">{{ site.person.title }}</p>
+  <div class="qr-code">
+    <img src="{{ '/assets/qr/site-qr.svg' | relative_url }}" width="400" height="400" alt="QR code linking to {{ site.url | remove: 'https://' }}">
+  </div>
+  <p class="url">{{ site.url | remove: 'https://' }}</p>
+  <div class="btn-row no-print" style="justify-content:center;margin-top:2rem">
+    <a class="btn" href="{{ '/assets/qr/site-qr.svg' | relative_url }}" download>SVG (print)</a>
+    <a class="btn" href="{{ '/assets/qr/site-qr.png' | relative_url }}" download>PNG (slides)</a>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+# Site identity (also used by jekyll-seo-tag for Open Graph / Twitter cards)
+title: Ian Riley
+tagline: Instructional Assistant Professor of Computer Science
+description: >-
+  Ian Riley, Instructional Assistant Professor of Computer Science at the
+  Tandy School of Computer Science, University of Tulsa.
+url: https://isr413.github.io
+baseurl: ""
+lang: en_US
+logo: /assets/img/profile.jpg
+
+author:
+  name: Ian Riley
+  email: isr413@utulsa.edu
+
+# Contact card details (rendered on the home page and in contact.vcf)
+person:
+  name: Ian Riley
+  given_name: Ian
+  family_name: Riley
+  title: Instructional Assistant Professor of Computer Science
+  department: Tandy School of Computer Science
+  organization: University of Tulsa
+  city: Tulsa
+  region: OK
+  email: isr413@utulsa.edu
+  photo: /assets/img/profile.jpg
+
+# Icon links on the home page; remove or add entries as needed
+social:
+  - name: GitHub
+    url: https://github.com/isr413
+  - name: LinkedIn
+    url: https://www.linkedin.com/in/ian-riley-302a256a/
+  - name: YouTube
+    url: https://www.youtube.com/@latenitecode
+  # - name: Google Scholar
+  #   url: https://scholar.google.com/citations?user=XXXX
+  # - name: ORCID
+  #   url: https://orcid.org/0000-0000-0000-0000
+
+nav:
+  - title: Home
+    url: /
+  - title: Blog
+    url: /blog/
+  - title: Apps
+    url: /apps/
+  - title: Decks
+    url: /decks/
+
+timezone: America/Chicago
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: blog/feed.xml
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/profile.jpg
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      permalink: /blog/:year/:month/:day/:title/
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - scripts/
+  - vendor/

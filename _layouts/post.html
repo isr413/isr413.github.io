@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<article class="prose">
+  <p class="kicker">Blog</p>
+  <h1>{{ page.title }}</h1>
+  <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
+  {{ content }}
+  <hr>
+  <p><a href="{{ '/blog/' | relative_url }}">&larr; All posts</a></p>
+</article>

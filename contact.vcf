@@ -1,0 +1,18 @@
+---
+layout: null
+---
+{%- assign p = site.person -%}
+BEGIN:VCARD
+VERSION:3.0
+N:{{ p.family_name }};{{ p.given_name }};;;
+FN:{{ p.name }}
+TITLE:{{ p.title }}
+ORG:{{ p.organization }};{{ p.department }}
+EMAIL;TYPE=INTERNET,WORK:{{ p.email }}
+ADR;TYPE=WORK:;;;{{ p.city }};{{ p.region }};;USA
+URL:{{ site.url }}{{ site.baseurl }}/
+PHOTO;VALUE=URI:{{ p.photo | absolute_url }}
+{%- for s in site.social %}
+X-SOCIALPROFILE;TYPE={{ s.name | downcase | remove: " " }}:{{ s.url }}
+{%- endfor %}
+END:VCARD

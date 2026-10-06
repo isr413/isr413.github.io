@@ -1,0 +1,7 @@
+# Single-file HTML slide decks, newest first.
+# Drop the file in decks/ unchanged (no front matter) and add an entry here.
+- title: Recursion & Quicksort
+  url: /decks/recursion-and-quicksort.html
+  course: Algorithms & Data Structures
+  description: Recursion and divide-and-conquer sorting, with Lomuto and Hoare partition traces stepped through slide by slide.
+  tags: [recursion, sorting, lecture]
