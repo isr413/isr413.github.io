@@ -6,6 +6,9 @@ description: >-
   Tandy School of Computer Science, University of Tulsa.
 url: https://isr413.github.io
 baseurl: ""
+
+# Shown after the name in the site header: "Ian Riley. Husband. Father. ..."
+brand_roles: [Husband, Father, Professor, Developer]
 lang: en_US
 logo: /assets/img/profile.jpg
 
