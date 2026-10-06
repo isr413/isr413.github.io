@@ -1,6 +1,6 @@
 # Topic groups for the Decks page, in display order.
 # Each deck in decks.yml names one of these ids in its `category` field.
 # Decks with a missing or unknown category are listed under "Other" at the end.
-- id: recursion-sorting
-  title: Recursion & Sorting
-  description: Thinking recursively, divide-and-conquer, and the sorting algorithms built on them.
+- id: algorithms-data-structures
+  title: Algorithms and Data Structures
+  description: Recursion, sorting, searching, and the data structures that make them fast.
