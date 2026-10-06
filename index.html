@@ -20,21 +20,23 @@ layout: default
       <a class="btn primary" href="mailto:{{ p.email }}">{% include icon.html name="email" %}Email me</a>
       <a class="btn" href="{{ '/contact.vcf' | relative_url }}">{% include icon.html name="contact" %}Add to contacts</a>
     </div>
-    <ul class="icon-links" aria-label="Elsewhere">
-      {%- for s in site.social %}
-      <li><a href="{{ s.url }}" rel="me noopener" aria-label="{{ s.name }}" title="{{ s.name }}">{% include icon.html name=s.name %}</a></li>
-      {%- endfor %}
-    </ul>
-    {%- if site.hobby.size > 0 %}
-    <div class="link-row">
-      <span class="link-label" id="hobby-label">Hobby:</span>
-      <ul class="icon-links" aria-labelledby="hobby-label">
-        {%- for s in site.hobby %}
-        <li><a href="{{ s.url }}" rel="me noopener" aria-label="Hobby {{ s.name }}" title="Hobby {{ s.name }}">{% include icon.html name=s.name %}</a></li>
+    <div class="links-line">
+      <ul class="icon-links" aria-label="Elsewhere">
+        {%- for s in site.social %}
+        <li><a href="{{ s.url }}" rel="me noopener" aria-label="{{ s.name }}" title="{{ s.name }}">{% include icon.html name=s.name %}</a></li>
         {%- endfor %}
       </ul>
+      {%- if site.hobby.size > 0 %}
+      <div class="link-row">
+        <span class="link-label" id="hobby-label">Hobby:</span>
+        <ul class="icon-links" aria-labelledby="hobby-label">
+          {%- for s in site.hobby %}
+          <li><a href="{{ s.url }}" rel="me noopener" aria-label="Hobby {{ s.name }}" title="Hobby {{ s.name }}">{% include icon.html name=s.name %}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endif %}
     </div>
-    {%- endif %}
   </div>
 </section>
 
