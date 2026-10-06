@@ -19,7 +19,7 @@ Visitors usually arrive by scanning a QR code on a business card, slide, poster,
 - **Jekyll 3.10**, built and deployed automatically by GitHub Pages from `main`
 - Plain HTML + CSS, with a few lines of vanilla JS for the Share button
 - Plugins (all supported by GitHub Pages): `jekyll-seo-tag` (Open Graph / Twitter cards), `jekyll-feed` (RSS at `/blog/feed.xml`), `jekyll-sitemap`
-- Visual style: the **Slate & Gold** palette from the slide-deck engine (`.claude/skills/aipp-slide-deck-builder`), with light and dark modes
+- Visual style: the **Slate & Gold** palette from the slide-deck engine, with light and dark modes. The slide-deck builder skill lives locally in `.claude/skills/` and is git-ignored, so it is never committed or published.
 
 ## Repository structure
 
@@ -44,7 +44,6 @@ Visitors usually arrive by scanning a QR code on a business card, slide, poster,
 │   ├── img/              # profile.jpg, favicon.svg, apple-touch-icon.png
 │   └── qr/               # site-qr.svg (print) and site-qr.png (slides)
 ├── scripts/generate_qr.py
-├── .claude/skills/       # Slide-deck builder skill (not published; Jekyll skips dot-folders)
 └── Gemfile
 ```
 
