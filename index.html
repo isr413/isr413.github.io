@@ -22,6 +22,9 @@ layout: default
     </div>
     <div class="links-line">
       <ul class="icon-links" aria-label="Elsewhere">
+        {%- if p.faculty_url %}
+        <li><a href="{{ p.faculty_url }}" rel="me noopener" aria-label="Faculty page, {{ p.organization }}" title="Faculty page">{% include icon.html name="faculty" %}</a></li>
+        {%- endif %}
         {%- for s in site.social %}
         <li><a href="{{ s.url }}" rel="me noopener" aria-label="{{ s.name }}" title="{{ s.name }}">{% include icon.html name=s.name %}</a></li>
         {%- endfor %}

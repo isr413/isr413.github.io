@@ -9,6 +9,7 @@ This page lists everything on the site. It updates itself whenever a post, app, 
 ## About me
 
 - [Home]({{ '/' | relative_url }}): who I am, what I teach, and how to reach me
+- [Faculty page]({{ site.person.faculty_url }}) at the {{ site.person.organization }}
 - [Add me to your contacts]({{ '/contact.vcf' | relative_url }}) (vCard)
 - [Printable QR code]({{ '/qr.html' | relative_url }}) for sharing this site
 

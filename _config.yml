@@ -28,6 +28,7 @@ person:
   region: OK
   email: isr413@utulsa.edu
   photo: /assets/img/profile.jpg
+  faculty_url: https://utulsa.edu/departments/computer-science/ian-riley/
 
 # Icon links on the home page; remove or add entries as needed
 social:
