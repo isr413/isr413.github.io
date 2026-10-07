@@ -1,0 +1,6 @@
+# Self-hosted web platforms, listed above the apps on /apps/.
+# Each entry links out to its own site (full https:// URL).
+- title: Cerakona
+  url: https://cerakona-tscs.vercel.app/
+  description: Online exams for the Tandy School of Computer Science.
+  tags: [exams, assessment]

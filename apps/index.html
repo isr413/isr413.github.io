@@ -1,11 +1,26 @@
 ---
 layout: default
 title: Apps
-description: Interactive, single-page apps by Ian Riley for exploring algorithms and data structures.
+description: Platforms and interactive, single-page apps by Ian Riley.
 ---
 <p class="kicker">Apps</p>
-<h1>Interactive apps</h1>
-<p class="lede">Hands-on tools for exploring algorithms and data structures. Each one runs entirely in your browser.</p>
-<div class="grid" style="margin-top:2rem">
-  {%- for app in site.data.apps %}{% include work-card.html item=app label="App" %}{% endfor %}
-</div>
+<h1>Apps</h1>
+<p class="lede">Web platforms I build and host, plus hands-on tools for exploring algorithms and data structures.</p>
+<nav class="topic-nav" aria-label="Sections">
+  <a class="tag" href="#platforms">Platforms <span class="muted">{{ site.data.platforms.size }}</span></a>
+  <a class="tag" href="#interactive-apps">Interactive Apps <span class="muted">{{ site.data.apps.size }}</span></a>
+</nav>
+<section class="deck-group" id="platforms" aria-labelledby="platforms-title">
+  <h2 id="platforms-title">Platforms</h2>
+  <p class="muted">Self-hosted websites, each running on its own domain.</p>
+  <div class="grid">
+    {%- for platform in site.data.platforms %}{% include work-card.html item=platform label="Platform" %}{% endfor %}
+  </div>
+</section>
+<section class="deck-group" id="interactive-apps" aria-labelledby="interactive-apps-title">
+  <h2 id="interactive-apps-title">Interactive Apps</h2>
+  <p class="muted">Single-page tools for exploring algorithms and data structures. Each one runs entirely in your browser.</p>
+  <div class="grid">
+    {%- for app in site.data.apps %}{% include work-card.html item=app label="App" %}{% endfor %}
+  </div>
+</section>

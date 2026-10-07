@@ -25,6 +25,14 @@ This page lists everything on the site. It updates itself whenever a post, app, 
 No posts yet. New posts will appear here and on the [Blog]({{ '/blog/' | relative_url }}) page.
 {% endif %}
 
+## Platforms
+
+<ul>
+{%- for platform in site.data.platforms %}
+  <li><a href="{{ platform.url }}">{{ platform.title }}</a>: {{ platform.description }}</li>
+{%- endfor %}
+</ul>
+
 ## Interactive apps
 
 <ul>

@@ -27,7 +27,8 @@ Visitors usually arrive by scanning a QR code on a business card, slide, poster,
 .
 ├── _config.yml           # Site identity, contact details, social links, nav
 ├── _data/
-│   ├── apps.yml          # Listing for /apps/  (title, url, description, tags)
+│   ├── apps.yml          # Interactive Apps on /apps/ (title, url, description, tags)
+│   ├── platforms.yml     # Platforms on /apps/: self-hosted sites (title, full url, description, tags)
 │   ├── decks.yml         # Listing for /decks/ (title, url, category, course, description, tags)
 │   └── deck_categories.yml  # Topic groups for /decks/, in display order
 ├── _includes/            # head, icons, listing card, post list, deck groups
